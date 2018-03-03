@@ -1,13 +1,15 @@
 
 $(document).ready(function() {
-    var questions = ["How many toes do cats have?", "How many bones does an average cat have in it’s body?", "Which of these is not a sign of contentment?", "Why do cats meow?", "What is a group of kittens called?", "What are cat breeders called?", "Why were cats originally brought to the Americas?", "What year was the first known cat video filmed?", "Which of these terms is used for when cats groom other cats?", "What scent do cats hate?", "How do cats mark humans as their territory?", "About how many hours do cats sleep for each day?", "How heavy was the heaviest cat ever recorded?"];
+    var questions = ["1: How many toes do cats have?", "2: How many bones does an average cat have in it’s body?", "3: Which of these is not a sign of contentment?", "4: Why do cats meow?", "5: What is a group of kittens called?", "6: What are cat breeders called?", "7: Why were cats originally brought to the Americas?", "8: What year was the first known cat video filmed?", "9: Which of these terms is used for when cats groom other cats?", "10: What scent do cats hate?", "11: How do cats mark humans as their territory?", "12: About how many hours do cats sleep for each day?", "13: How heavy was the heaviest cat ever recorded?"];
     var answers = [["20", "18", "16", "14"], ["230", "244", "250", "225"], ["Slow Blink", "Hissing", "Purring", "Kneading"], ["Just to make noise.", "To communicate with other cats.", "To communicate with humans.", "To warn you of an attack."], ["Flock", "Squad", "Crowd", "Kindle"], ["Catteries", "Cat Builders", "Catmen", "Catographers"], ["For pets.", "For protection.", "To get rid of rodents.", "For illegal fighting."], ["1984", "1927", "1901", "1894"], ["Allogrooming", "Pinagrooming", "Fidogrooming", "There is no special term."], ["Lavender", "Maple", "Citrus", "Cherry"], ["Spraying on you.", "Rubbing their head and body all over you.", "Licking you.", "Scratching you."], ["10", "20", "16", "24"], ["46lbs", "48lbs", "39lbs", "44lbs"]]
     var correctAnswers = ["B. 18", "B. 244", "B. Hissing", "C. To communicate with humans.", "D. Kindle", "A. Catteries", "C. To get rid of rodents.", "D. 1894", "A. Allogrooming", "C. Citrus", "B. Rubbing their head and body all over you.", "C. 16", "A. 46lbs"];
-    var catPuns = [];
+    var correctCatPuns = ["Fancatstic!", "Looking Good, Feline Good!", "That was clawsome!", "Fancatstic!", "That was clawsome!", "Fancatstic!", "Looking Good, Feline Good!", "Purrfect!", "Fancatstic!", "That was pawsome!", "I hope you aren't afraid of these cat puns. That would make you a scaredy cat!", "Don't let the cat out of the bag! You're almost there!", "Purrfect!"];
+    var incorrectCatPuns = ["You've gotta be kitten me!", "Stay pawsitive!", "Are you fur real?", "Stay pawsitive!", "You've gotta be kitten me!", "You can do better than that rigt meow!", "Are you fur real?", "A cat could do better than that!", "Stay pawsitive!", "It's meow or never!", "I hope you aren't afraid of these cat puns. That would make you a scaredy cat!", "Don't let the cat out of the bag! You're almost there!", "You've gotta be kitten me!"];
 
     $("#start").on("click", function() {
         createHTML();
         timerFunc();
+        $("#rules").text("");
     })
 
     $("body").on("click", ".answer", function() {
@@ -48,14 +50,14 @@ $(document).ready(function() {
 
     function correctAnswer() {
         correct++;
-        gameHTML = "<h2> Time Remaining: <span id='timer'>" + timer + "</span></h2><h2>Correct! The answer is: " + correctAnswers[questionCount] + "</h2>";
+        gameHTML = "<h2> Time Remaining: <span id='timer'>" + timer + "</span></h2><h2>Correct! The answer is: " + correctAnswers[questionCount] + "</h2><h3>" + correctCatPuns[questionCount] + "</h3>";
         $(".main").html(gameHTML);
         setTimeout(wait, 5000);
     }
 
     function incorrectAnswer() {
         incorrect++;
-        gameHTML = "<h2> Time Remaining: <span id='timer'>" + timer + "</span></h2><h2>Wrong! The answer is: " + correctAnswers[questionCount] + "</h2>";
+        gameHTML = "<h2> Time Remaining: <span id='timer'>" + timer + "</span></h2><h2>Wrong! The answer is: " + correctAnswers[questionCount] + "</h2><h3>" + incorrectCatPuns[questionCount] + "</h3>";
         $(".main").html(gameHTML);
         setTimeout(wait, 5000);
     }
