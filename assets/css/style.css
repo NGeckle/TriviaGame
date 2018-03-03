@@ -1,0 +1,27 @@
+div {
+    background-color: white;
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+#button {
+    text-align: center;
+    margin: 0 auto;
+}
