@@ -33,3 +33,10 @@ p {
 .answer {
     font-weight: 700;
 }
+
+#start {
+    width: 25%;
+    height: 30px;
+    font-family: 'Mina', sans-serif;
+    font-size: 20px;
+}
